@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- link ref fontawesone -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <title>Todo List Js</title>
 
@@ -19,10 +19,174 @@
 <body>
     
     
-    <h2>My Todo List</h2>
+   <div class="container">
+    <!-- sidebar navbar application -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Todo List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!--<li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+        <div class="d-flex">
+          <a class="btn btn-outline-success" type="submit">Créer une tâche</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
+  <section class="section mb-5">
+        <!-- Haut de page -->
+    <div class="card">
+        <div class="card-header">
+        Qu'est-ce que c'est qu'une Todo List ?
+        </div>
+        <div class="card-body">
+        <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, consequatur beatae eligendi, unde corrupti velit deserunt voluptates quis enim repellat porro praesentium ex ullam. Rem nesciunt optio asperiores itaque amet!
+        </p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Créer un nouvelle tâche</button>
+        </div>
+    </div>
+  </section>
 
+  <section class="section2">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#taches">Mes Tâches</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tachesComplete">Mes Tâches Complètes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#emploi">Emploi du temps</a>
+        </li>
+    </ul>
 
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane container active mt-4" id="taches">
+            
+            <div class="card" style="width: auto;">
+                <div class="card-body">
+                    <h5 class="card-title">Titre</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">date</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <span class="original">
+                        <a href="#"><i class="fa-sharp-duotone fa-solid fa-trash"></i></a>
+                        <a href="#"><i class="fa-sharp-duotone fa-solid fa-pen-to-square"></i></a>
+                    </span>
+                </div>
+            </div>
+              
+        </div>
+        <div class="tab-pane container fade mt-4" id="tachesComplete">taches complete</div>
+        <div class="tab-pane container fade mt-4" id="emploi">Emploi du temps</div>
+    </div>
+
+    <!-- Modal class for create a task -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nouvelle Tâche</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="form">
+              <div class="mb-3">
+                <label for="title" class="col-form-label">Titre</label>
+                <input type="text" class="form-control" id="title" placeholder="Diner">
+                <div id="msgTitle"></div>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="col-form-label">Date</label>
+                <input type="date" class="form-control" id="date">
+                <div id="msgDate"></div>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="col-form-label">Description</label>
+                <textarea class="form-control" rows="4" id="textarea" placeholder="Je vais diner ce soir avec du poisson"></textarea>
+                <div id="msgDescription"></div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" id="add">Ajouter</button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal class for update a task -->
+    <div class="modal fade" id="editExampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modifier ma Tâche</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="updateForm" onsubmit="return updateTask(event)">
+              <div class="mb-3">
+                <label for="title" class="col-form-label">Titre</label>
+                <input type="text" class="form-control" id="titleUpdate" placeholder="Diner">
+                <div id="msgTitle"></div>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="col-form-label">Date</label>
+                <input type="date" class="form-control" id="dateUpdate">
+                <div id="msgDate"></div>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="col-form-label">Description</label>
+                <textarea class="form-control" rows="4" id="textareaUpdate" placeholder="Je vais diner ce soir avec du poisson"></textarea>
+                <div id="msgDescription"></div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" id="add">Modifier</button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="flash-message" id="flashMessage"></div>
+
+   </div>
 
 
 
