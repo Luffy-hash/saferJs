@@ -61,13 +61,13 @@
         <!-- Haut de page -->
     <div class="card">
         <div class="card-header">
-        Qu'est-ce que c'est qu'une Todo List ?
+          Qu'est-ce que c'est qu'une Todo List ?
         </div>
         <div class="card-body">
-        <p class="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, consequatur beatae eligendi, unde corrupti velit deserunt voluptates quis enim repellat porro praesentium ex ullam. Rem nesciunt optio asperiores itaque amet!
-        </p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Créer un nouvelle tâche</button>
+          <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, consequatur beatae eligendi, unde corrupti velit deserunt voluptates quis enim repellat porro praesentium ex ullam. Rem nesciunt optio asperiores itaque amet!
+          </p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Créer un nouvelle tâche</button>
         </div>
     </div>
   </section>
@@ -88,22 +88,8 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div class="tab-pane container active mt-4" id="taches">
-            
-            <div class="card" style="width: auto;">
-                <div class="card-body">
-                    <h5 class="card-title">Titre</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">date</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                    <span class="original">
-                        <a href="#"><i class="fa-sharp-duotone fa-solid fa-trash"></i></a>
-                        <a href="#"><i class="fa-sharp-duotone fa-solid fa-pen-to-square"></i></a>
-                    </span>
-                </div>
-            </div>
-              
-        </div>
+        <input type="text" class="form-control mt-4" id="searchTask" placeholder="Rechercher une tâche...">
+        <div class="tab-pane container active mt-4 taskList" id="taskList"></div>
         <div class="tab-pane container fade mt-4" id="tachesComplete">taches complete</div>
         <div class="tab-pane container fade mt-4" id="emploi">Emploi du temps</div>
     </div>
@@ -117,7 +103,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="form">
+            <form id="addForm" autocomplete="off">
               <div class="mb-3">
                 <label for="title" class="col-form-label">Titre</label>
                 <input type="text" class="form-control" id="title" placeholder="Diner">
@@ -136,7 +122,7 @@
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary" id="add">Ajouter</button>
+                <button type="submit" class="btn btn-primary" id="closeModal">Ajouter</button>
               </div>
             </form>
           </div>
@@ -154,11 +140,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="updateForm" onsubmit="return updateTask(event)">
+            <form id="updateForm" autocomplete="off">
               <div class="mb-3">
                 <label for="title" class="col-form-label">Titre</label>
                 <input type="text" class="form-control" id="titleUpdate" placeholder="Diner">
-                <div id="msgTitle"></div>
+                <div id="msgUpdateTitle"></div>
               </div>
               <div class="mb-3">
                 <label for="date" class="col-form-label">Date</label>
@@ -173,12 +159,12 @@
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary" id="add">Modifier</button>
+                <button type="submit" class="btn btn-primary" id="updatecloseModal">Modifier</button>
               </div>
             </form>
           </div>
           
-        </div>
+        </div> 
       </div>
     </div>
 
